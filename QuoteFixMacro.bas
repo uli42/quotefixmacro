@@ -904,7 +904,7 @@ catch:
         Case TypeReplyAll:
             NewText = quotedText
         Case TypeForward:
-            NewText = OutlookHeader & quotedText
+            NewText = OutlookHeader & "> " & vbCrLf & quotedText
     End Select
 
     'Put text in signature (=Template for text)
@@ -1349,7 +1349,7 @@ Private Function getOutlookHeader(ByRef BodyLines() As String, ByRef lineCounter
     Next lineCounter
 
     'skip OUTLOOK_HEADERFINISH
-    'lineCounter = lineCounter + 1
+    lineCounter = lineCounter + 1
 
 End Function
 
